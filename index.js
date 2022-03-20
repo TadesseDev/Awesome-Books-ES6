@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lb: document.getElementById('list-of-books'),
     sb: document.querySelector('#storeBooks'),
     newBF: document.querySelector('#newBook'),
-    nl: document.querySelectorAll('a')
+    nl: document.querySelectorAll('a'),
+    emptyBookPH: '<p id=\'book-list-empty\'> Your Books list is empty, you can <a href=\'#new-book-section\'>click here</a> to add new</p>'
   });
   ls.prepare();
   console.log(attr);
@@ -23,21 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // if there is no book list Add special content prompting user to add book
   if (attr.storeBooks.childElementCount === 0) {
-<<<<<<< HEAD
-    updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookListPlaceHolder);
+    updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookText);
+    // console.log(attr.listOfBooks);
+    const AddBookLink = attr.listOfBooks.querySelector('a'); console.log(AddBookLink);
+    AddSwapEvenForLinks(AddBookLink);
   }
 
   // for all navigation links attach section swap event
   for (let i = 0; i < attr.navLinks.length; i += 1) {
     const link = attr.navLinks[i];
-=======
-    updateSectionWithInnerHtml(storeBooks, emptyBookListPlaceHolder);
-  }
-
-  // for all navigation links attach section swap event 
-  for (let i = 0; i < attr.navLinks.length; i += 1) {
-    const link = navLinks[i];
->>>>>>> d56cbc6e9b7fdeb178fed61f3ff8315b062a6ff8
     AddSwapEvenForLinks(link);
   }
 });
