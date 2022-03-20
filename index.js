@@ -22,10 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // activate the default active section
   attr.listOfBooks.classList.add('active');
 
-  // if there is no book list Add special content prompting user to add book
+  // if there is no book list Add special content prompting user to add new book
   if (attr.storeBooks.childElementCount === 0) {
     updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookText);
-    // console.log(attr.listOfBooks);
     const AddBookLink = attr.listOfBooks.querySelector('a'); console.log(AddBookLink);
     AddSwapEvenForLinks(AddBookLink);
   }
