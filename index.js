@@ -2,7 +2,7 @@ import attr, { setAttributes } from './modules/attributes-module.js';
 import ls from './modules/localStorage-module.js';
 import { addNewBookEvent, updateSectionWithInnerHtml, AddSwapEvenForLinks } from './modules/methods-module.js';
 import MyBook from './modules/MyBook-module.js';
-
+import { DateTime } from './extra-modules/luxon.js';
 // as as document becomes ready the following activity get executed
 document.addEventListener('DOMContentLoaded', () => {
   // initialize attributes.
@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   addNewBookEvent(attr.addBookForm, (title, author) => {
     new MyBook(title, author).addBookToDom();
   });
+
+  // update the date to the navbar bottom using a luxon library
+  const navBarDate = document.querySelector('#navbar-date');
+  navBarDate.textContent = DateTime.now().toLocaleString();
 
   // activate the default section (list of books)
   attr.listOfBooks.classList.add('active');
