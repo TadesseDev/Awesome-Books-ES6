@@ -23,10 +23,10 @@ export const swapSection = (newActiveSection) => {
 };
 
 // Associate event for elements which are expected to switch a section
-export function AddSwapEvenForLinks(NavLink) {
+export const AddSwapEvenForLinks = (NavLink) => {
   NavLink.addEventListener('click', function addEvent(event) {
     event.preventDefault();
     const sectionName = this.getAttribute('href').replace('#', '');
     swapSection(document.getElementById(sectionName));
   });
-}
+};

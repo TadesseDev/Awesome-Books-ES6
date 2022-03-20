@@ -9,13 +9,9 @@ const updateBookListFromLocalStorage = () => {
 };
 
 // check if there is a stored book or not
-const prepareLocalStorage = () => {
-  if (!localStorage.getItem('bookCollection')) {
-    localStorage.setItem('bookCollection', JSON.stringify([]));
-  } else {
-    updateBookListFromLocalStorage();
-  }
-};
+const prepareLocalStorage = () => (localStorage.getItem('bookCollection')
+  ? updateBookListFromLocalStorage()
+  : localStorage.setItem('bookCollection', JSON.stringify([])));
 
 const ls = {
   prepare: prepareLocalStorage,

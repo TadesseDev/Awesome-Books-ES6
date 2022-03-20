@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - In that case we simply pass the form and the callback function
   */
   addNewBookEvent(attr.addBookForm, (title, author) => {
-    const myNewBook = new MyBook(title, author);
-    myNewBook.addBookToDom();
+    new MyBook(title, author).addBookToDom();
   });
 
   // activate the default section (list of books)

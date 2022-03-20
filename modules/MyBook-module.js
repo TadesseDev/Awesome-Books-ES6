@@ -27,14 +27,10 @@ export default class MyBook {
   }
 
   // book can add itself to the book list
-  addBook = () => {
-    MyBook.addBookToList(this);
-  }
+  addBook = () => MyBook.addBookToList(this);
 
   // book can remove itself from the book list
-  removeBook = () => {
-    MyBook.removeBookFomList(this);
-  }
+  removeBook = () => MyBook.removeBookFomList(this);
 
   // book can add itself to the DOM
   addBookToDom = () => {
