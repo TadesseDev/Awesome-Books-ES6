@@ -4,11 +4,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome books</title>
+
+  <!-- Font Awesome API -->
+  <script src="https://kit.fontawesome.com/030a66e167.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome API -->
+
+  <!-- google fonts Poppins API  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <!-- google fonts Poppins API  -->
+
+  <!-- Css Stylesheet  -->
   <link rel="stylesheet" href="./index.css">
-  <title>Document</title>
+  <!-- Css Stylesheet -->
+
 </head>
 <body>
-  
+
+<!-- navbar section starts here  -->
+  <nav id="navbar-container">
+    <h2 id="navbar-title">Awesome Books</h2>
+`    <ul class="navbar-ul">
+      <li class="navbar-li"><a href="#list-of-books">List</a></li>
+      <li class="navbar-li"><a id="nav-add-new-text" href="#new-book-section">Add new</a></li>
+      <li class="navbar-li"><a href="#contact-info">Contact</a></li>
+    </ul>
+  </nav>
+  <p id="navbar-date">Wed March-16</p> 
+ <!-- navbar section ends here  -->
+
+ <!-- List of books section starts here  -->
+<section id="list-of-books">
+    <div class="main-text">
+    <h1 id="main-header-text"> All awesome books</h1>
+    </div>
+<!-- List of books section ends here  -->
+
+<!-- Database of all the books starts here -->
+  <article id="storeBooks">
+  </article>
+</section>
+<!-- Database of all the books end here  -->
+
+<section id="new-book-section">
+    <h2 class="new-book-text"> Add a New Book</h2>
+    <form action="#" id="newBook">
+      <input type="text" id="title" name="title" placeholder="Title" required minlength="2" maxlength="100">
+        <input type="text" id="author" name="author" placeholder="Author" maxlength="100">
+          <button type="submit" id="addBook">Add</button>
+        </form>
+</section>
+
+<section id="contact-info">
+<h2 id="contact-info-title">Contact Information</h2>
+<p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!</p>
+<ul>
+  <li>Our e-mail: email24t@gmail.com</li>
+  <li>Our phone number: +251921577930</li>
+  <li>Our address: Streetname 22, 84503 City, Country</li>
+</ul>
+</section>
+<!-- footer starts here  -->
+<footer id="footer-container">
+<p id="footer-text">Copyright</p>
+</footer>
+<!-- footer ends here  -->
   <script type="module" src="index.js"></script>
 </body>
 </html>
