@@ -1,5 +1,4 @@
-
-const addNewBookEvent = (form) => {
+export const addNewBookEvent = (form) => {
   const newBook = form;
   newBook.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -12,14 +11,14 @@ const addNewBookEvent = (form) => {
   });
 };
 
-const swapSection = (newActiveSection) => {
+export const swapSection = (newActiveSection) => {
   const oldActiveSection = document.querySelector('section.active');
   oldActiveSection.classList.toggle('active');
   newActiveSection.classList.add('active');
 };
 
 // associate event for the nav links and other elements if needed
-function AddSwapEvenForLinks(NavLink) {
+export function AddSwapEvenForLinks(NavLink) {
   NavLink.addEventListener('click', function (event) {
     event.preventDefault();
     const sectionName = this.getAttribute('href').replace('#', '');
@@ -28,6 +27,6 @@ function AddSwapEvenForLinks(NavLink) {
 }
 
 // update any section with a given HTML
-const updateSectionWithInnerHtml = (section, innerHTML) => {
+export const updateSectionWithInnerHtml = (section, innerHTML) => {
   section.innerHTML = innerHTML;
 };
