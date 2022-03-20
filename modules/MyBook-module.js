@@ -1,5 +1,6 @@
 import attr from './attributes-module.js';
 import { updateSectionWithInnerHtml, AddSwapEvenForLinks } from './methods-module.js';
+
 // every book is Instance of a book class;
 export default class MyBook {
   static listOfBook = [];
@@ -22,17 +23,20 @@ export default class MyBook {
     this.title = title;
     this.author = author;
     this.id = id;
-    this.addBook(); // add book to Book list
+    this.addBook(); // Add book to Book list on book instantiation
   }
 
+  // book can add itself to the book list
   addBook = () => {
     MyBook.addBookToList(this);
   }
 
+  // book can remove itself from the book list
   removeBook = () => {
     MyBook.removeBookFomList(this);
   }
 
+  // book can add itself to the DOM
   addBookToDom = () => {
     attr.storeBooks = attr.storeBooks || document.querySelector('#storeBooks');
     const placeHolder = document.getElementById('book-list-empty');
@@ -58,6 +62,7 @@ export default class MyBook {
     MyBook.updateLocalStorage(this);
   };
 
+  // book can remove itself from the DOM
   removeBookFromDom = (storeBooks) => {
     const book = document.getElementById(`${this.id}`);
     storeBooks.removeChild(book);

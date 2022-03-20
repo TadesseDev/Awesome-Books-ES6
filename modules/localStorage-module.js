@@ -1,6 +1,5 @@
-// import { } from './methods-module.js'
 import MyBook from './MyBook-module.js';
-// local storage managing functions functions
+// update stored books by creating them asa a book object
 const updateBookListFromLocalStorage = () => {
   const bookData = JSON.parse(localStorage.getItem('bookCollection'));
   bookData.forEach((bookData) => {
@@ -9,16 +8,18 @@ const updateBookListFromLocalStorage = () => {
   });
 };
 
+// check if there is a stored book or not
 const prepareLocalStorage = () => {
-  // find and update local storage elements
   if (!localStorage.getItem('bookCollection')) {
     localStorage.setItem('bookCollection', JSON.stringify([]));
   } else {
     updateBookListFromLocalStorage();
   }
 };
+
 const ls = {
   prepare: prepareLocalStorage,
   update: updateBookListFromLocalStorage,
 };
+
 export default ls;

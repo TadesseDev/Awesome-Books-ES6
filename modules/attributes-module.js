@@ -5,6 +5,8 @@ const attributes = {
   navLinks: null,
   emptyBookText: null,
 };
+
+// setter for object of attributes
 const setAttributes = ({
   lb = null, sb = null, newBF = null, nl = [], emptyBookPH = null,
 }) => {
