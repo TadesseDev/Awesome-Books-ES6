@@ -23,12 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // if there is no book list Add special content prompting user to add book
   if (attr.storeBooks.childElementCount === 0) {
+<<<<<<< HEAD
     updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookListPlaceHolder);
   }
 
   // for all navigation links attach section swap event
   for (let i = 0; i < attr.navLinks.length; i += 1) {
     const link = attr.navLinks[i];
+=======
+    updateSectionWithInnerHtml(storeBooks, emptyBookListPlaceHolder);
+  }
+
+  // for all navigation links attach section swap event 
+  for (let i = 0; i < attr.navLinks.length; i += 1) {
+    const link = navLinks[i];
+>>>>>>> d56cbc6e9b7fdeb178fed61f3ff8315b062a6ff8
     AddSwapEvenForLinks(link);
   }
 });
