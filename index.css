@@ -129,7 +129,7 @@ body > section.active {
   align-self: flex-end;
 }
 
-.new-book-text {
+#new-book-text {
   color: #000;
   text-align: center;
 }

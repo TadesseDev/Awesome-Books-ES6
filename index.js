@@ -1,11 +1,11 @@
 import attr, { setAttributes } from './modules/attributes-module.js';
 import ls from './modules/localStorage-module.js';
 import { addNewBookEvent, updateSectionWithInnerHtml, AddSwapEvenForLinks } from './modules/methods-module.js';
-// import { } from './modules/MyBook-module.js';
 
 // as as document becomes ready the following activity get executed
 document.addEventListener('DOMContentLoaded', () => {
 
+  //set attributes to be used.
   setAttributes({
     lb: document.getElementById('list-of-books'),
     sb: document.querySelector('#storeBooks'),
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     emptyBookPH: '<p id=\'book-list-empty\'> Your Books list is empty, you can <a href=\'#new-book-section\'>click here</a> to add new</p>'
   });
   ls.prepare();
-  console.log(attr);
 
   // associate event for the add new book form
   addNewBookEvent(attr.addBookForm);
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // if there is no book list Add special content prompting user to add new book
   if (attr.storeBooks.childElementCount === 0) {
     updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookText);
-    const AddBookLink = attr.listOfBooks.querySelector('a'); console.log(AddBookLink);
+    const AddBookLink = attr.listOfBooks.querySelector('a');
     AddSwapEvenForLinks(AddBookLink);
   }
 

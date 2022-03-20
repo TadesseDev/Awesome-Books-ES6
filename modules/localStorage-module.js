@@ -1,4 +1,5 @@
 // import { } from './methods-module.js'
+import MyBook from './MyBook-module.js';
 //local storage managing functions functions 
 const updateBookListFromLocalStorage = () => {
   const bookData = JSON.parse(localStorage.getItem('bookCollection'));

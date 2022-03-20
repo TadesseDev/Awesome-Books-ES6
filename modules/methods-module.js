@@ -1,13 +1,13 @@
+import MyBook from './MyBook-module.js';
 export const addNewBookEvent = (form) => {
-  const newBook = form;
-  newBook.addEventListener('submit', (event) => {
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
-    const title = event.target.elements[0].value;
-    const author = event.target.elements[1].value;
+    const title = this.elements[0].value;
+    const author = this.elements[1].value;
     const myNewBook = new MyBook(title, author);
     myNewBook.addBookToDom();
-    event.target.elements[0].value = '';
-    event.target.elements[1].value = '';
+    this.elements[0].value = '';
+    this.elements[1].value = '';
   });
 };
 

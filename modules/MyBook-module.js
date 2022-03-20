@@ -1,5 +1,7 @@
+import attr from './attributes-module.js';
+import { updateSectionWithInnerHtml, AddSwapEvenForLinks } from './methods-module.js'; 
 // every book is Instance of a book class;
-class MyBook {
+export default class MyBook {
   static listOfBook = [];
 
   static {
@@ -23,16 +25,16 @@ class MyBook {
     this.addBook(); // add book to Book list
   }
 
-  addBook() {
+  addBook = () => {
     MyBook.addBookToList(this);
   }
 
-  removeBook() {
+  removeBook = () => {
     MyBook.removeBookFomList(this);
   }
 
   addBookToDom = () => {
-    storeBooks = storeBooks || document.querySelector('#storeBooks');
+    attr.storeBooks = attr.storeBooks || document.querySelector('#storeBooks');
     const placeHolder = document.getElementById('book-list-empty');
     if (placeHolder) {
       placeHolder.remove();
@@ -59,8 +61,10 @@ class MyBook {
   removeBookFromDom = (storeBooks) => {
     const book = document.getElementById(`${this.id}`);
     storeBooks.removeChild(book);
-    if (storeBooks.childElementCount === 0) {
-      updateSectionWithInnerHtml(storeBooks, emptyBookListPlaceHolder);
+    if (attr.storeBooks.childElementCount === 0) {
+      updateSectionWithInnerHtml(attr.storeBooks, attr.emptyBookText);
+      const AddBookLink = attr.listOfBooks.querySelector('a');
+      AddSwapEvenForLinks(AddBookLink);
     }
   };
 }
