@@ -1,5 +1,5 @@
 import attr from './attributes-module.js';
-import { updateSectionWithInnerHtml, AddSwapEvenForLinks } from './methods-module.js'; 
+import { updateSectionWithInnerHtml, AddSwapEvenForLinks } from './methods-module.js';
 // every book is Instance of a book class;
 export default class MyBook {
   static listOfBook = [];
@@ -49,11 +49,11 @@ export default class MyBook {
     removeButton.textContent = 'Remove';
     bookForm.appendChild(titleContainer);
     bookForm.appendChild(removeButton);
-    storeBooks.appendChild(bookForm);
+    attr.storeBooks.appendChild(bookForm);
     bookForm.addEventListener('submit', (event) => {
       event.preventDefault();
       this.removeBook();
-      this.removeBookFromDom(storeBooks);
+      this.removeBookFromDom(attr.storeBooks);
     });
     MyBook.updateLocalStorage(this);
   };

@@ -1,6 +1,6 @@
 // import { } from './methods-module.js'
 import MyBook from './MyBook-module.js';
-//local storage managing functions functions 
+// local storage managing functions functions
 const updateBookListFromLocalStorage = () => {
   const bookData = JSON.parse(localStorage.getItem('bookCollection'));
   bookData.forEach((bookData) => {
@@ -16,9 +16,9 @@ const prepareLocalStorage = () => {
   } else {
     updateBookListFromLocalStorage();
   }
-}
+};
 const ls = {
   prepare: prepareLocalStorage,
-  update: updateBookListFromLocalStorage
-}
+  update: updateBookListFromLocalStorage,
+};
 export default ls;

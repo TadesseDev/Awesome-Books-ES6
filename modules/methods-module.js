@@ -1,11 +1,9 @@
-import MyBook from './MyBook-module.js';
-export const addNewBookEvent = (form) => {
-  form.addEventListener('submit', function (event) {
+export const addNewBookEvent = (form, createBook) => {
+  form.addEventListener('submit', function addEvent(event) {
     event.preventDefault();
     const title = this.elements[0].value;
     const author = this.elements[1].value;
-    const myNewBook = new MyBook(title, author);
-    myNewBook.addBookToDom();
+    createBook(title, author);
     this.elements[0].value = '';
     this.elements[1].value = '';
   });
@@ -19,7 +17,7 @@ export const swapSection = (newActiveSection) => {
 
 // associate event for the nav links and other elements if needed
 export function AddSwapEvenForLinks(NavLink) {
-  NavLink.addEventListener('click', function (event) {
+  NavLink.addEventListener('click', function addEvent(event) {
     event.preventDefault();
     const sectionName = this.getAttribute('href').replace('#', '');
     swapSection(document.getElementById(sectionName));
