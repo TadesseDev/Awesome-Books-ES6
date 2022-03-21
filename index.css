@@ -1,0 +1,180 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: max-content;
+}
+
+body > section {
+  display: none;
+}
+
+body > section.active {
+  display: block;
+}
+
+/* ..................................................navbar section styles starts here ..................................... */
+#navbar-container {
+  border: 2px solid #000;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1px 10px 0.1px 10px;
+}
+
+#navbar-title {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  align-self: center;
+}
+
+.navbar-ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.navbar-li a {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #000;
+}
+
+#nav-add-new-text {
+  border-left: 2px solid #000;
+  border-right: 2px solid black;
+}
+
+#navbar-date {
+  text-align: right;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* .....................................navbar section styles ends here .................................................. */
+
+/* .....................................List of books section styling starts here........................................  */
+.main-text {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#main-header-text {
+  color: black;
+  text-align: center;
+  padding-left: 50px;
+}
+
+/* ........................................List of books section styling ends here................................................... */
+
+/* ........................................Database of all the books styling starts here ............................................ */
+
+#storeBooks {
+  border: 2px solid black;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
+
+#storeBooks form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#storeBooks form:nth-child(odd) {
+  background-color: silver;
+}
+
+#storeBooks form p {
+  margin: 5px;
+}
+
+/* .........................................Database of all the books styling ends here............................................ */
+
+/* .........................................Add New Book Section styling starts here...................................................... */
+.new-book-section {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  color: #e23c52;
+}
+
+#newBook {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#new-book-section input {
+  min-width: 70%;
+  margin: 10px auto;
+  height: 25px;
+}
+
+#new-book-section button {
+  margin-right: 15%;
+  align-self: flex-end;
+}
+
+#new-book-text {
+  color: #000;
+  text-align: center;
+}
+
+#addBook {
+  background-color: white;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* .........................................Add New Book Section styling ends here...................................................... */
+
+/* .........................................contact information section styling starts here........................................... */
+#contact-info {
+  max-width: 500px;
+  margin: auto;
+}
+
+#contact-info-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* ..........................................contact information section styling ends here........................................... */
+
+/* ..........................................the footer section style starts here.................................................... */
+footer {
+  border: 2px solid black;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  height: max-content;
+  margin-top: 20px;
+  align-self: end;
+}
+
+#footer-text {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* ..................................................the footer section style starts here.................................. */
+#book-list-empty {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
